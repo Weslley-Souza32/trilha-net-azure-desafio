@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TrilhaNetAzureDesafio.Context;
+using trilha_net_azure_desafio.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 

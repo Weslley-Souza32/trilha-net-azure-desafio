@@ -1,8 +1,9 @@
 using System.Text.Json;
 using Azure;
 using Azure.Data.Tables;
+using TrilhaNetAzureDesafio.Models;
 
-namespace TrilhaNetAzureDesafio.Models
+namespace trilha_net_azure_desafio.Models
 {
     public class FuncionarioLog : Funcionario, ITableEntity
     {
@@ -10,14 +11,14 @@ namespace TrilhaNetAzureDesafio.Models
 
         public FuncionarioLog(Funcionario funcionario, TipoAcao tipoAcao, string partitionKey, string rowKey)
         {
-            base.Id = funcionario.Id;
-            base.Nome = funcionario.Nome;
-            base.Endereco = funcionario.Endereco;
-            base.Ramal = funcionario.Ramal;
-            base.EmailProfissional = funcionario.EmailProfissional;
-            base.Departamento = funcionario.Departamento;
-            base.Salario = funcionario.Salario;
-            base.DataAdmissao = funcionario.DataAdmissao;
+            Id = funcionario.Id;
+            Nome = funcionario.Nome;
+            Endereco = funcionario.Endereco;
+            Ramal = funcionario.Ramal;
+            EmailProfissional = funcionario.EmailProfissional;
+            Departamento = funcionario.Departamento;
+            Salario = funcionario.Salario;
+            DataAdmissao = funcionario.DataAdmissao;
             TipoAcao = tipoAcao;
             JSON = JsonSerializer.Serialize(funcionario);
             PartitionKey = partitionKey;
